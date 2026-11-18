@@ -1,3 +1,295 @@
 .page {
-  padding: 48px;
+  position: relative;
+  max-width: 760px;
+}
+
+.decoration {
+  position: absolute;
+  top: -40px;
+  right: -60px;
+  width: 260px;
+  pointer-events: none;
+}
+
+.header {
+  position: relative;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.eyebrow::after {
+  content: '';
+  width: 320px;
+  max-width: 45%;
+  height: 1px;
+  background-color: var(--color-navy);
+  opacity: 0.4;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.title em {
+  font-style: italic;
+}
+
+.description {
+  max-width: 640px;
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* Tabs */
+
+.tabs {
+  display: flex;
+  gap: 36px;
+  margin-top: 36px;
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.tab {
+  position: relative;
+  padding: 0 0 16px;
+  border: none;
+  background: none;
+  font-size: 15px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.tabActive {
+  color: var(--color-blue);
+  font-weight: 500;
+}
+
+.tabActive::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background-color: var(--color-blue);
+}
+
+/* Toolbar */
+
+.toolbar {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 14px;
+  height: 50px;
+  padding: 0 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.search img {
+  width: 20px;
+  height: 20px;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: none;
+  font-size: 15px;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search input::placeholder {
+  color: var(--color-text-subtle);
+}
+
+.newButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.newButton:hover {
+  background-color: var(--color-blue-dark);
+}
+
+.newButton img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Table */
+
+.tableWrapper {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 0 12px 20px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.titleCell {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fileIcon {
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+}
+
+.rowTitle {
+  font-family: var(--font-serif);
+  font-size: 16px;
+}
+
+.rowDescription {
+  max-width: 180px;
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.type {
+  max-width: 120px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.tag {
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+
+.blue {
+  background-color: var(--color-blue-soft);
+  color: var(--color-blue);
+}
+
+.red {
+  background-color: var(--color-red-soft);
+  color: var(--color-red);
+}
+
+.green {
+  background-color: var(--color-green-soft);
+  color: var(--color-green);
+}
+
+.gray {
+  background-color: #eceae4;
+  color: var(--color-text);
+}
+
+.date {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.view {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-blue);
+}
+
+.more {
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border: none;
+  background: none;
+}
+
+.more img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 720px) {
+  .decoration {
+    display: none;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .newButton {
+    justify-content: center;
+    height: 48px;
+  }
 }
