@@ -6,6 +6,7 @@ import featureGuidance from '../../assets/svg/01-home/feature-actionable-guidanc
 import featureSaved from '../../assets/svg/01-home/feature-saved-for-later.svg'
 import arrowRight from '../../assets/svg/07-icons/white/arrow-right.svg'
 import styles from './Home.module.css'
+import HomeFeature from '../../components/HomeFeature'
 
 const features = [
   {
@@ -55,13 +56,7 @@ function Home() {
 
       <section className={styles.features}>
         {features.map((feature) => (
-          <article key={feature.title} className={styles.feature}>
-            <img src={feature.icon} alt="" className={styles.featureIcon} />
-            <div>
-              <h2 className={styles.featureTitle}>{feature.title}</h2>
-              <p className={styles.featureText}>{feature.text}</p>
-            </div>
-          </article>
+          <HomeFeature key={feature.title} icon={feature.icon} title={feature.title} text={feature.text} />
         ))}
       </section>
     </div>
