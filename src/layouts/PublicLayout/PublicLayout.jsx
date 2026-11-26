@@ -14,7 +14,7 @@ function PublicLayout() {
           <img src={logo} alt="CareerCompass" />
         </Link>
 
-        { <nav className={styles.nav}>
+        <nav className={styles.nav}>
           <NavLink to="/" end className={navLinkClass}>
             Home
           </NavLink>
@@ -24,7 +24,7 @@ function PublicLayout() {
           <NavLink to="/history" className={navLinkClass}>
             History
           </NavLink>
-        </nav>}
+        </nav>
 
         <div className={styles.actions}>
           <Link to="/login" className={styles.login}>
